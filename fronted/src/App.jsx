@@ -22,11 +22,19 @@ function App() {
   },[])
 
 
-  async function reviewCode(){
-      const response = await axios.post('http://localhost:3000/ai/get-review', {code})
-       
-      setReview(response.data)
+  async function reviewCode() {
+  try {
+    const response = await axios.post(
+      "https://code-reviewer-39xu.onrender.com/ai/get-review",
+      { code }
+    );
+
+    setReview(response.data);
+  } catch (error) {
+    console.error(error);
   }
+}
+
 
   return (
     <>
