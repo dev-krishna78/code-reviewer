@@ -9,7 +9,6 @@ import axios from 'axios'
 import './App.css'
 
 function App() {
-  const [ count, setCount ] = useState(0)
   const [ code, setCode ] = useState(` function sum() {
   return 1 + 1
 }`)
@@ -21,8 +20,16 @@ function App() {
   }, [])
 
   async function reviewCode() {
-    const response = await axios.post('http://localhost:3000/ai/get-review', { code })
-    setReview(response.data)
+
+    console.log("body sending =>", 
+      { prompt: code});
+
+    const response = await axios.post(`
+      ${import.meta.env.VITE_BACKEND_URL}/ai/get-review`,
+       { prompt: code }
+      );
+
+    setReview(response.data);
   }
 
   return (
