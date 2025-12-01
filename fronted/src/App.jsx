@@ -27,6 +27,10 @@ function App() {
 
   return (
     <>
+
+    <header>
+      <div className='heading'>CODE-REVIEWER</div>
+    </header>
       <main>
         <div className="left">
           <div className="code">

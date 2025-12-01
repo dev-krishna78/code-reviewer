@@ -35,6 +35,20 @@ h1 {
   line-height: 1.1;
 }
 
+header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heading{
+  font-family: fantasy;
+  font-size: 3rem;
+  text-shadow: 0 0 10px black;
+  padding: 10px 10px;
+
+}
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;
